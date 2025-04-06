@@ -17,6 +17,13 @@
     </ul>
   </nav>
 
+  <!-- Buscador de productos -->
+<div class="buscador-container">
+  <input type="text" id="buscador" placeholder="Buscar productos Xiaomi...">
+  <p id="no-result" style="display: none; color: red; margin-top: 10px;">No se encontró el producto.</p>
+</div>
+
+
   <!-- Encabezado -->
   <header class="header">
     <h2>¡Bienvenido a tu tienda de confianza!</h2>
@@ -134,3 +141,22 @@
   </div>
 </footer>
 
+<script>
+  const buscador = document.getElementById('buscador');
+  const productos = document.querySelectorAll('.card');
+  const mensajeNoResultado = document.getElementById('no-result');
+
+  buscador.addEventListener('input', () => {
+    let hayCoincidencia = false;
+    const filtro = buscador.value.toLowerCase();
+
+    productos.forEach(producto => {
+      const titulo = producto.querySelector('h2').textContent.toLowerCase();
+      const visible = titulo.includes(filtro);
+      producto.style.display = visible ? 'block' : 'none';
+      if (visible) hayCoincidencia = true;
+    });
+
+    mensajeNoResultado.style.display = hayCoincidencia ? 'none' : 'block';
+  });
+</script>
