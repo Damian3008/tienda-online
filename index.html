@@ -1,269 +1,153 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Tienda Online de Dami</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      font-family: sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f3f3f3;
-    }
-    .navbar {
-      background-color: #0077cc;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      padding: 1rem 2rem;
-      align-items: center;
-    }
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 1rem;
-    }
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .header {
-      background: linear-gradient(to right, #0077cc, #00bfff);
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-    .buscador-container {
-      padding: 1rem;
-      text-align: center;
-    }
-    #buscador {
-      padding: 0.5rem;
-      width: 60%;
-      max-width: 400px;
-      font-size: 1rem;
-    }
-    .productos {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 1rem;
-      padding: 2rem;
-    }
-    .card {
-      background-color: white;
-      padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    .card img {
-      width: 100%;
-      max-height: 200px;
-      object-fit: contain;
-    }
-    .card button {
-      background-color: #0077cc;
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      margin-top: 0.5rem;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-    .footer {
-      background-color: #0077cc;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
-    .footer-links a {
-      color: white;
-      margin: 0 1rem;
-      text-decoration: none;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tienda Xiaomi</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
-
-  <!-- Barra de navegación -->
-  <nav class="navbar">
-    <h1 class="logo">🛍️ Tienda de Dami</h1>
+  <header class="navbar">
+    <h1 class="logo">Xiaomi Store</h1>
     <ul class="nav-links">
       <li><a href="#">Inicio</a></li>
       <li><a href="#">Productos</a></li>
+      <li><a href="#">Ofertas</a></li>
       <li><a href="#">Contacto</a></li>
     </ul>
-  </nav>
-
-  <!-- Buscador -->
-  <div class="buscador-container">
-    <input type="text" id="buscador" placeholder="Buscar productos Xiaomi...">
-    <p id="no-result" style="display: none; color: red;">No se encontró el producto.</p>
-  </div>
-
-  <!-- Encabezado -->
-  <header class="header">
-    <h2>¡Bienvenido a tu tienda de confianza!</h2>
-    <p>Productos únicos, precios accesibles.</p>
   </header>
 
-  <!-- Productos -->
-  <div class="productos" id="lista-productos">
-    <!-- Repite este bloque para cada producto -->
-    <div class="card">
-      <img src="https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-mi-11-5g-1.jpg" alt="Xiaomi Mi 11">
-      <h2>Xiaomi Mi 11</h2>
-      <p>$699.99</p>
-      <button>Agregar al carrito</button>
-    </div>
-    <div class="card">
-      <img src="https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-redmi-note10-1.jpg" alt="Xiaomi Redmi Note 10">
-      <h2>Xiaomi Redmi Note 10</h2>
-      <p>$199.99</p>
-      <button>Agregar al carrito</button>
-    </div>
-    <div class="card">
-      <img src="https://fdn2.gsmarena.com/vv/pics/xiaomi/poco-x3-pro-1.jpg" alt="Xiaomi Poco X3 Pro">
-      <h2>Xiaomi Poco X3 Pro</h2>
-      <p>$249.99</p>
-      <button>Agregar al carrito</button>
-    </div>
-    <div class="card">
-      <img src="https://fdn2.gsmarena.com/vv/pics/xiaomi/mi-10t-pro-1.jpg" alt="Xiaomi Mi 10T Pro">
-      <h2>Xiaomi Mi 10T Pro</h2>
-      <p>$599.99</p>
-      <button>Agregar al carrito</button>
-    </div>
-    <div class="card">
-      <img src="https://fdn2.gsmarena.com/vv/pics/xiaomi/redmi-9a-1.jpg" alt="Xiaomi Redmi 9A">
-      <h2>Xiaomi Redmi 9A</h2>
-      <p>$99.99</p>
-      <button>Agregar al carrito</button>
-    </div>
-    <div class="card">
-      <img src="https://fdn2.gsmarena.com/vv/pics/xiaomi/black-shark-4-1.jpg" alt="Xiaomi Black Shark 4">
-      <h2>Xiaomi Black Shark 4</h2>
-      <p>$499.99</p>
-      <button>Agregar al carrito</button>
-    </div>
-    <div class="card">
-      <img src="https://fdn2.gsmarena.com/vv/pics/xiaomi/mix-4-1.jpg" alt="Xiaomi Mi Mix 4">
-      <h2>Xiaomi Mi Mix 4</h2>
-      <p>$799.99</p>
-      <button>Agregar al carrito</button>
-    </div>
-    <div class="card">
-      <img src="https://fdn2.gsmarena.com/vv/pics/xiaomi/redmi-note9-pro-1.jpg" alt="Xiaomi Redmi Note 9 Pro">
-      <h2>Xiaomi Redmi Note 9 Pro</h2>
-      <p>$279.99</p>
-      <button>Agregar al carrito</button>
-    </div>
-    <div class="card">
-      <img src="https://fdn2.gsmarena.com/vv/pics/xiaomi/mi-9t-1.jpg" alt="Xiaomi Mi 9T">
-      <h2>Xiaomi Mi 9T</h2>
-      <p>$349.99</p>
-      <button>Agregar al carrito</button>
-    </div>
-    <div class="card">
-      <img src="https://i.blogs.es/8c60f5/xiaomi-mi-11-ultra/1366_2000.jpg" alt="Xiaomi Mi 11 Ultra">
-      <h2>Xiaomi Mi 11 Ultra</h2>
-      <p>$150.000</p>
-      <button>Agregar al carrito</button>
-    </div>
-    <div class="card">
-      <img src="https://www.notebookcheck.org/uploads/tx_nbc2/XiaomiMi11Pro.jpg" alt="Xiaomi Mi 11 Pro">
-      <h2>Xiaomi Mi 11 Pro</h2>
-      <p>$180.000</p>
-      <button>Agregar al carrito</button>
-    </div>
-    <div class="card">
-      <img src="https://i.blogs.es/34ec2d/redmi-note-10-pro-2/450_1000.jpg" alt="Xiaomi Redmi Note 10 Pro">
-      <h2>Xiaomi Redmi Note 10 Pro</h2>
-      <p>$130.000</p>
-      <button>Agregar al carrito</button>
-    </div>
-    <div class="card">
-      <img src="https://i.blogs.es/93eecd/xiaomi-poco-x3-pro-1/450_1000.jpg" alt="Xiaomi Poco X3">
-      <h2>Xiaomi Poco X3</h2>
-      <p>$120.000</p>
-      <button>Agregar al carrito</button>
-    </div>
-    <div class="card">
-      <img src="https://i.blogs.es/61ee9b/xiaomi-poco-f3/450_1000.jpg" alt="Xiaomi Poco F3">
-      <h2>Xiaomi Poco F3</h2>
-      <p>$140.000</p>
-      <button>Agregar al carrito</button>
-    </div>
-    <div class="card">
-      <img src="https://i.blogs.es/4eddd9/xiaomi-mi-10t-2/1366_2000.jpg" alt="Xiaomi Mi 10T">
-      <h2>Xiaomi Mi 10T</h2>
-      <p>$160.000</p>
-      <button>Agregar al carrito</button>
-    </div>
-    <div class="card">
-      <img src="https://i.blogs.es/918416/xiaomi-redmi-9-1/450_1000.jpg" alt="Xiaomi Redmi 9">
-      <h2>Xiaomi Redmi 9</h2>
-      <p>$90.000</p>
-      <button>Agregar al carrito</button>
-    </div>
-    <div class="card">
-      <img src="https://i.blogs.es/18b143/xiaomi-redmi-9a-2/450_1000.jpg" alt="Xiaomi Redmi 9A">
-      <h2>Xiaomi Redmi 9A</h2>
-      <p>$80.000</p>
-      <button>Agregar al carrito</button>
-    </div>
-    <div class="card">
-      <img src="https://i.blogs.es/92cd2f/xiaomi-redmi-9c-1/450_1000.jpg" alt="Xiaomi Redmi 9C">
-      <h2>Xiaomi Redmi 9C</h2>
-      <p>$85.000</p>
-      <button>Agregar al carrito</button>
-    </div>
-    <div class="card">
-      <img src="https://i.blogs.es/b1deac/xiaomi-mi-note-10/450_1000.jpg" alt="Xiaomi Mi Note 10">
-      <h2>Xiaomi Mi Note 10</h2>
-      <p>$190.000</p>
-      <button>Agregar al carrito</button>
-    </div>
-    <div class="card">
-      <img src="https://i.blogs.es/5dc7c0/xiaomi-mi-note-10-lite-1/450_1000.jpg" alt="Xiaomi Mi Note 10 Lite">
-      <h2>Xiaomi Mi Note 10 Lite</h2>
-      <p>$150.000</p>
-      <button>Agregar al carrito</button>
-    </div>
+  <section class="header">
+    <h2>Bienvenidos a nuestra tienda Xiaomi</h2>
+    <p>Encontrá los últimos productos al mejor precio</p>
+  </section>
+
+  <div class="search-container">
+    <input type="text" id="buscador" placeholder="Buscar productos..." onkeyup="buscarProductos()">
   </div>
 
-  <!-- Pie de página -->
+  <!-- Botón del carrito -->
+  <div class="cart-icon" onclick="toggleCart()">
+    🛒 <span id="cart-count">0</span>
+  </div>
+
+  <!-- Panel del carrito -->
+  <div id="cart-panel" class="cart-panel">
+    <h2>Tu carrito</h2>
+    <div id="cart-items"></div>
+    <p id="cart-total">Total: $0</p>
+    <button onclick="checkout()">Finalizar compra</button>
+    <button onclick="toggleCart()">Cerrar</button>
+  </div>
+
+  <section class="productos" id="lista-productos">
+    <!-- Producto 1 -->
+    <div class="card">
+      <img src="https://i01.appmifile.com/webfile/globalimg/products/pc/redmi-note-13-pro-5g/specs01.jpg" alt="Redmi Note 13 Pro 5G">
+      <h2>Redmi Note 13 Pro 5G</h2>
+      <p>USD 350</p>
+      <button onclick="agregarAlCarrito('Redmi Note 13 Pro 5G', 350)">Agregar al carrito</button>
+    </div>
+    <!-- Producto 2 -->
+    <div class="card">
+      <img src="https://i01.appmifile.com/webfile/globalimg/products/pc/xiaomi-13t/specs01.jpg" alt="Xiaomi 13T">
+      <h2>Xiaomi 13T</h2>
+      <p>USD 520</p>
+      <button onclick="agregarAlCarrito('Xiaomi 13T', 520)">Agregar al carrito</button>
+    </div>
+    <!-- Producto 3 -->
+    <div class="card">
+      <img src="https://i01.appmifile.com/webfile/globalimg/products/pc/xiaomi-watch-2-pro/specs01.jpg" alt="Xiaomi Watch 2 Pro">
+      <h2>Xiaomi Watch 2 Pro</h2>
+      <p>USD 220</p>
+      <button onclick="agregarAlCarrito('Xiaomi Watch 2 Pro', 220)">Agregar al carrito</button>
+    </div>
+    <!-- Producto 4 -->
+    <div class="card">
+      <img src="https://i01.appmifile.com/webfile/globalimg/products/pc/xiaomi-pad-6/specs01.jpg" alt="Xiaomi Pad 6">
+      <h2>Xiaomi Pad 6</h2>
+      <p>USD 390</p>
+      <button onclick="agregarAlCarrito('Xiaomi Pad 6', 390)">Agregar al carrito</button>
+    </div>
+    <!-- Producto 5 -->
+    <div class="card">
+      <img src="https://i01.appmifile.com/webfile/globalimg/products/pc/xiaomi-smart-band-8/specs01.jpg" alt="Xiaomi Smart Band 8">
+      <h2>Smart Band 8</h2>
+      <p>USD 50</p>
+      <button onclick="agregarAlCarrito('Smart Band 8', 50)">Agregar al carrito</button>
+    </div>
+    <!-- Agregá los productos restantes aquí con el mismo formato -->
+  </section>
+
   <footer class="footer">
-    <p>&copy; 2025 Tienda de Dami. Todos los derechos reservados.</p>
+    <p>&copy; 2025 Xiaomi Store Argentina. Todos los derechos reservados.</p>
     <div class="footer-links">
-      <a href="#">Contacto</a>
-      <a href="#">Instagram</a>
-      <a href="#">Facebook</a>
+      <a href="#">Términos</a>
+      <a href="#">Privacidad</a>
+      <a href="#">Soporte</a>
     </div>
   </footer>
 
   <script>
-    const buscador = document.getElementById('buscador');
-    const productos = document.querySelectorAll('.card');
-    const mensajeNoResultado = document.getElementById('no-result');
+    function buscarProductos() {
+      const input = document.getElementById('buscador').value.toLowerCase();
+      const productos = document.querySelectorAll('.card');
+      productos.forEach(card => {
+        const titulo = card.querySelector('h2').innerText.toLowerCase();
+        card.style.display = titulo.includes(input) ? '' : 'none';
+      });
+    }
 
-    buscador.addEventListener('input', () => {
-      let hayCoincidencia = false;
-      const filtro = buscador.value.toLowerCase();
+    let cart = [];
 
-      productos.forEach(producto => {
-        const titulo = producto.querySelector('h2').textContent.toLowerCase();
-        const visible = titulo.includes(filtro);
-        producto.style.display = visible ? 'block' : 'none';
-        if (visible) hayCoincidencia = true;
+    function agregarAlCarrito(nombre, precio) {
+      const item = cart.find(p => p.nombre === nombre);
+      if (item) {
+        item.cantidad++;
+      } else {
+        cart.push({ nombre, precio, cantidad: 1 });
+      }
+      actualizarCarrito();
+    }
+
+    function actualizarCarrito() {
+      const cartItems = document.getElementById("cart-items");
+      const cartCount = document.getElementById("cart-count");
+      const cartTotal = document.getElementById("cart-total");
+
+      cartItems.innerHTML = "";
+      let total = 0;
+      let count = 0;
+
+      cart.forEach(item => {
+        total += item.precio * item.cantidad;
+        count += item.cantidad;
+        const div = document.createElement("div");
+        div.classList.add("cart-item");
+        div.innerHTML = `
+          <span>${item.nombre} x${item.cantidad}</span>
+          <span>$${item.precio * item.cantidad}</span>
+        `;
+        cartItems.appendChild(div);
       });
 
-      mensajeNoResultado.style.display = hayCoincidencia ? 'none' : 'block';
-    });
-  </script>
+      cartCount.innerText = count;
+      cartTotal.innerText = "Total: $" + total;
+    }
 
+    function toggleCart() {
+      const panel = document.getElementById("cart-panel");
+      panel.classList.toggle("open");
+    }
+
+    function checkout() {
+      alert("Gracias por tu compra ❤️ (esto es una demo)");
+      cart = [];
+      actualizarCarrito();
+      toggleCart();
+    }
+  </script>
 </body>
 </html>
+
