@@ -1,153 +1,329 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tienda Xiaomi</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mi Tienda Online - Estilo Porto</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    .top-bar {
+      background-color: #9da9b9;
+      color: white;
+      font-size: 12px;
+      padding: 8px 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .top-bar a {
+      color: white;
+      text-decoration: none;
+      margin-left: 10px;
+    }
+
+    .header {
+      background-color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      font-weight: normal;
+      font-size: 14px;
+      color: #888;
+      display: block;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .right-icons {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .phone {
+      font-size: 14px;
+    }
+
+    .cart {
+      font-size: 20px;
+      position: relative;
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background: #d00;
+      color: white;
+      border-radius: 50%;
+      font-size: 12px;
+      padding: 2px 6px;
+    }
+
+    .main-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 20px;
+      padding: 30px;
+    }
+
+    .main-sale {
+      grid-row: span 2;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .main-sale img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .sale-content {
+      position: absolute;
+      top: 20%;
+      left: 10%;
+      color: white;
+    }
+
+    .sale-content .small {
+      font-size: 18px;
+    }
+
+    .sale-content .highlight {
+      font-size: 24px;
+      font-weight: bold;
+      color: #50c5f3;
+    }
+
+    .sale-content h1 {
+      font-size: 40px;
+      margin: 10px 0;
+    }
+
+    .sale-content .btn {
+      margin-top: 10px;
+      display: inline-block;
+    }
+
+    .promo {
+      position: relative;
+      overflow: hidden;
+      border-radius: 6px;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .promo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .promo-content {
+      position: absolute;
+      color: #333;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .promo-content.dark {
+      color: white;
+    }
+
+    .promo-content h3 {
+      font-size: 18px;
+      line-height: 1.4;
+    }
+
+    .promo-circle {
+      width: 80%;
+      aspect-ratio: 1;
+      background-color: #333;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .promo-circle h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .promo-circle p {
+      font-size: 14px;
+    }
+
+    .btn {
+      background-color: #41576b;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #2c3e50;
+    }
+
+    .btn.small {
+      font-size: 12px;
+      padding: 8px 14px;
+    }
+
+    @media (max-width: 1024px) {
+      .main-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
+      }
+
+      .main-sale {
+        grid-column: span 2;
+      }
+
+      .promo-circle {
+        width: 90%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .top-bar, .header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .navbar ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .main-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .main-sale, .promo {
+        grid-column: span 1;
+      }
+
+      .sale-content h1 {
+        font-size: 28px;
+      }
+
+      .promo-circle {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header class="navbar">
-    <h1 class="logo">Xiaomi Store</h1>
-    <ul class="nav-links">
-      <li><a href="#">Inicio</a></li>
-      <li><a href="#">Productos</a></li>
-      <li><a href="#">Ofertas</a></li>
-      <li><a href="#">Contacto</a></li>
-    </ul>
+
+  <div class="top-bar">
+    <div>ENG | USD</div>
+    <div>
+      <a href="#">Welcome</a>
+      <a href="#">My Account</a>
+      <a href="#">Blog</a>
+      <a href="#">Wishlist</a>
+      <a href="#">Cart</a>
+      <a href="#">Log In</a>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="logo">PORTO <span>eCommerce</span></div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Categories</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Pages</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Elements</a></li>
+        <li><a href="#">Buy Porto!</a></li>
+      </ul>
+    </nav>
+    <div class="right-icons">
+      <div class="phone">Call Us: <strong>+123 5678 890</strong></div>
+      <div class="cart">🛒<span class="cart-count">0</span></div>
+    </div>
   </header>
 
-  <section class="header">
-    <h2>Bienvenidos a nuestra tienda Xiaomi</h2>
-    <p>Encontrá los últimos productos al mejor precio</p>
-  </section>
-
-  <div class="search-container">
-    <input type="text" id="buscador" placeholder="Buscar productos..." onkeyup="buscarProductos()">
-  </div>
-
-  <!-- Botón del carrito -->
-  <div class="cart-icon" onclick="toggleCart()">
-    🛒 <span id="cart-count">0</span>
-  </div>
-
-  <!-- Panel del carrito -->
-  <div id="cart-panel" class="cart-panel">
-    <h2>Tu carrito</h2>
-    <div id="cart-items"></div>
-    <p id="cart-total">Total: $0</p>
-    <button onclick="checkout()">Finalizar compra</button>
-    <button onclick="toggleCart()">Cerrar</button>
-  </div>
-
-  <section class="productos" id="lista-productos">
-    <!-- Producto 1 -->
-    <div class="card">
-      <img src="https://i01.appmifile.com/webfile/globalimg/products/pc/redmi-note-13-pro-5g/specs01.jpg" alt="Redmi Note 13 Pro 5G">
-      <h2>Redmi Note 13 Pro 5G</h2>
-      <p>USD 350</p>
-      <button onclick="agregarAlCarrito('Redmi Note 13 Pro 5G', 350)">Agregar al carrito</button>
+  <main class="main-grid">
+    <div class="main-sale">
+      <img src="https://cdn.pixabay.com/photo/2016/11/29/04/45/fashion-1866579_960_720.jpg" alt="Sale">
+      <div class="sale-content">
+        <p class="small">UP TO <span class="highlight">50% OFF</span></p>
+        <h1>HUGE SALE</h1>
+        <p>NOW STARTING AT <strong>$99.00</strong></p>
+        <a href="#" class="btn">Shop Now</a>
+      </div>
     </div>
-    <!-- Producto 2 -->
-    <div class="card">
-      <img src="https://i01.appmifile.com/webfile/globalimg/products/pc/xiaomi-13t/specs01.jpg" alt="Xiaomi 13T">
-      <h2>Xiaomi 13T</h2>
-      <p>USD 520</p>
-      <button onclick="agregarAlCarrito('Xiaomi 13T', 520)">Agregar al carrito</button>
+    <div class="promo">
+      <img src="https://cdn.pixabay.com/photo/2017/03/27/14/56/watch-2178803_960_720.jpg" alt="Watch">
+      <div class="promo-content">
+        <h3>PRICE $98.00<br/>HOT DEAL<br/>WATCHES</h3>
+        <a href="#" class="btn small">Shop Now</a>
+      </div>
     </div>
-    <!-- Producto 3 -->
-    <div class="card">
-      <img src="https://i01.appmifile.com/webfile/globalimg/products/pc/xiaomi-watch-2-pro/specs01.jpg" alt="Xiaomi Watch 2 Pro">
-      <h2>Xiaomi Watch 2 Pro</h2>
-      <p>USD 220</p>
-      <button onclick="agregarAlCarrito('Xiaomi Watch 2 Pro', 220)">Agregar al carrito</button>
+    <div class="promo">
+      <img src="https://cdn.pixabay.com/photo/2016/03/27/19/58/fashion-1283863_960_720.jpg" alt="Jackets">
+      <div class="promo-content dark">
+        <h3>WOMEN'S SALE<br/>JACKETS</h3>
+        <a href="#" class="btn small">Shop Now</a>
+      </div>
     </div>
-    <!-- Producto 4 -->
-    <div class="card">
-      <img src="https://i01.appmifile.com/webfile/globalimg/products/pc/xiaomi-pad-6/specs01.jpg" alt="Xiaomi Pad 6">
-      <h2>Xiaomi Pad 6</h2>
-      <p>USD 390</p>
-      <button onclick="agregarAlCarrito('Xiaomi Pad 6', 390)">Agregar al carrito</button>
+    <div class="promo">
+      <div class="promo-circle">
+        <h3>DEAL PROMOS</h3>
+        <p>Limited sale in our categories</p>
+        <a href="#" class="btn small" style="margin-top:10px;">Shop Now</a>
+      </div>
     </div>
-    <!-- Producto 5 -->
-    <div class="card">
-      <img src="https://i01.appmifile.com/webfile/globalimg/products/pc/xiaomi-smart-band-8/specs01.jpg" alt="Xiaomi Smart Band 8">
-      <h2>Smart Band 8</h2>
-      <p>USD 50</p>
-      <button onclick="agregarAlCarrito('Smart Band 8', 50)">Agregar al carrito</button>
-    </div>
-    <!-- Agregá los productos restantes aquí con el mismo formato -->
-  </section>
+  </main>
 
-  <footer class="footer">
-    <p>&copy; 2025 Xiaomi Store Argentina. Todos los derechos reservados.</p>
-    <div class="footer-links">
-      <a href="#">Términos</a>
-      <a href="#">Privacidad</a>
-      <a href="#">Soporte</a>
-    </div>
-  </footer>
-
-  <script>
-    function buscarProductos() {
-      const input = document.getElementById('buscador').value.toLowerCase();
-      const productos = document.querySelectorAll('.card');
-      productos.forEach(card => {
-        const titulo = card.querySelector('h2').innerText.toLowerCase();
-        card.style.display = titulo.includes(input) ? '' : 'none';
-      });
-    }
-
-    let cart = [];
-
-    function agregarAlCarrito(nombre, precio) {
-      const item = cart.find(p => p.nombre === nombre);
-      if (item) {
-        item.cantidad++;
-      } else {
-        cart.push({ nombre, precio, cantidad: 1 });
-      }
-      actualizarCarrito();
-    }
-
-    function actualizarCarrito() {
-      const cartItems = document.getElementById("cart-items");
-      const cartCount = document.getElementById("cart-count");
-      const cartTotal = document.getElementById("cart-total");
-
-      cartItems.innerHTML = "";
-      let total = 0;
-      let count = 0;
-
-      cart.forEach(item => {
-        total += item.precio * item.cantidad;
-        count += item.cantidad;
-        const div = document.createElement("div");
-        div.classList.add("cart-item");
-        div.innerHTML = `
-          <span>${item.nombre} x${item.cantidad}</span>
-          <span>$${item.precio * item.cantidad}</span>
-        `;
-        cartItems.appendChild(div);
-      });
-
-      cartCount.innerText = count;
-      cartTotal.innerText = "Total: $" + total;
-    }
-
-    function toggleCart() {
-      const panel = document.getElementById("cart-panel");
-      panel.classList.toggle("open");
-    }
-
-    function checkout() {
-      alert("Gracias por tu compra ❤️ (esto es una demo)");
-      cart = [];
-      actualizarCarrito();
-      toggleCart();
-    }
-  </script>
 </body>
 </html>
-
